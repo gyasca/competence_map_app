@@ -8,7 +8,7 @@ const CurvyPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   backgroundColor: '#F0F4F8',
   boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-  marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(4),
 }));
 
 const CurvyButton = styled(Button)(({ theme }) => ({
@@ -21,43 +21,52 @@ const categories = ['Business Innovation & Enterprise', 'Programming', 'Web & UX
 
 const modules = {
   CL1: ['Mathematical Analysis & Application', 'Network Technologies', 'Statistical Research Methods', 'Business Innovation & Enterprise', 'Programming'],
-  CL2: ['Cybersecurity Technologies & Ethics', 'AI & Data Analytics', 'Database Design & Administration', 'Web & UX Design', 'Data Structures & Algorithms'],
-  CL3: ['Data Wrangling', 'Applied Machine Learning', 'Data Platform Management', 'Marketing Strategy'],
-  CL4: ['AI Ethics & Governance', 'Data Journalism', 'Technology Synthesis & Application', 'Data Processing on Big Data'],
-  CL5: ['Applied Deep Learning', 'Machine Learning Operations', 'Text Analytics'],
+  CL2: ['Cybersecurity Technologies & Ethics', 'AI & Data Analytics', 'Database Design & Administration', 'Web & UX Design'],
+  CL3: ['Predictive Modelling', 'Data Wrangling', 'Marketing Strategy', 'Data Structures & Algorithms'],
+  CL4: ['Applied Machine Learning', 'AI Ethics & Governance', 'Data Platform Management', 'Data Journalism'],
+  CL5: ['Applied Deep Learning', 'Text Analytics', 'Machine Learning Operations', 'Data Processing on Big Data', 'Full Stack Development for Data Science'],
 };
 
 const outcomes = ['Analytics & Computational Modelling', 'Applied Artificial Intelligence', 'Data Strategy for AIOps', 'Emerging Technology & Application', 'Data Visualization & Journalism', 'DataOps for AI Innovation', 'Business Needs Analysis & Strategy', 'Agile Development for Data Science'];
 
 const relationships = [
-  { from: 'Mathematical Analysis & Application', to: 'Applied Machine Learning' },
-  { from: 'Network Technologies', to: 'Data Wrangling' },
-  { from: 'Statistical Research Methods', to: 'AI & Data Analytics' },
-  { from: 'Cybersecurity Technologies & Ethics', to: 'AI Ethics & Governance' },
-  { from: 'AI & Data Analytics', to: 'Applied Machine Learning' },
-  { from: 'Database Design & Administration', to: 'Data Platform Management' },
-  { from: 'Data Wrangling', to: 'Data Journalism' },
+  { from: 'Mathematical Analysis & Application', to: 'Predictive Modelling' },
+  { from: 'Predictive Modelling', to: 'Applied Machine Learning' },
   { from: 'Applied Machine Learning', to: 'Applied Deep Learning' },
-  { from: 'Applied Machine Learning', to: 'Machine Learning Operations' },
-  { from: 'Applied Machine Learning', to: 'Text Analytics' },
-  { from: 'Programming', to: 'Data Structures & Algorithms' },
-  { from: 'Business Innovation & Enterprise', to: 'Marketing Strategy' },
-  { from: 'Marketing Strategy', to: 'Technology Synthesis & Application' },
-  { from: 'Data Platform Management', to: 'Data Processing on Big Data' },
-  { from: 'Applied Machine Learning', to: 'Analytics & Computational Modelling' },
   { from: 'Applied Deep Learning', to: 'Applied Artificial Intelligence' },
+  { from: 'Predictive Modelling', to: 'Text Analytics' },
+  { from: 'Text Analytics', to: 'Analytics & Computational Modelling' },
+  
+  { from: 'Network Technologies', to: 'Cybersecurity Technologies & Ethics' },
+  { from: 'Cybersecurity Technologies & Ethics', to: 'Data Platform Management' },
+  { from: 'Data Platform Management', to: 'Machine Learning Operations' },
   { from: 'Machine Learning Operations', to: 'Data Strategy for AIOps' },
+  { from: 'Cybersecurity Technologies & Ethics', to: 'AI Ethics & Governance' },
+  { from: 'AI Ethics & Governance', to: 'Technology Synthesis & Application' },
   { from: 'Technology Synthesis & Application', to: 'Emerging Technology & Application' },
+
+  { from: 'Statistical Research Methods', to: 'AI & Data Analytics' },
+  { from: 'AI & Data Analytics', to: 'AI Ethics & Governance' },
+  { from: 'AI & Data Analytics', to: 'Data Journalism' },
   { from: 'Data Journalism', to: 'Data Visualization & Journalism' },
-  { from: 'DataOps for AI Innovation', to: 'DataOps for AI Innovation' },
-  { from: 'Data Processing on Big Data', to: 'Business Needs Analysis & Strategy' },
-  { from: 'AI Ethics & Governance', to: 'Agile Development for Data Science' },
+
+  { from: 'Database Design & Administration', to: 'Data Wrangling' },
+  { from: 'Data Wrangling', to: 'Data Processing on Big Data' },
+  { from: 'Data Processing on Big Data', to: 'DataOps for AI Innovation' },
+
+  { from: 'Business Innovation & Enterprise', to: 'Marketing Strategy' },
+  { from: 'Marketing Strategy', to: 'Business Needs Analysis & Strategy' },
+
+  { from: 'Programming', to: 'Web & UX Design' },
+  { from: 'Web & UX Design', to: 'Data Structures & Algorithms' },
+  { from: 'Data Structures & Algorithms', to: 'Full Stack Development for Data Science' },
+  { from: 'Full Stack Development for Data Science', to: 'Agile Development for Data Science' },
 ];
 
 const Home = () => {
   return (
     <Container maxWidth="xl" sx={{ marginTop: '2rem' }}>
-      <Grid container spacing={4}>
+      <Grid container spacing={4}> 
         {/* Left Section */}
         <Grid item xs={12} md={2}>
           <CurvyPaper elevation={3}>
@@ -79,7 +88,7 @@ const Home = () => {
         {/* Right Section */}
         <Grid item xs={12} md={10}>
           <ArcherContainer strokeColor="blue">
-            <Grid container spacing={2}>
+            <Grid container spacing={4}>
               {Object.keys(modules).map((cl, index) => (
                 <Grid item xs={2} key={index}>
                   <Typography variant="h6" textAlign="center">{cl}</Typography>
