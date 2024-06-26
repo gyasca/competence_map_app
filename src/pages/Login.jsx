@@ -187,7 +187,7 @@ function Login() {
       }}
     >
       <Typography variant="h5" sx={{ my: 2 }}>
-        Sign in to HRTestApp Account
+        Sign in to NYP Competence Map Software Account
       </Typography>
       <Box
         component="form"

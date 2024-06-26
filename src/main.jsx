@@ -54,8 +54,8 @@ let fonts = [
 let theme = createTheme({
   palette: {
     primary: {
-      main: "#9fc5c9",
-      light: "#9fc5c9",
+      main: "#1b2461",
+      light: "#c5ecfc",
     },
     secondary: {
       main: grey[500],

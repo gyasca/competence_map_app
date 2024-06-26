@@ -29,6 +29,24 @@ export function Navbar() {
                                 <Stack spacing={2} direction="row" sx={{ display: ["none", "none", "flex"] }}>
                                     <Button startIcon={<HomeIcon/>} LinkComponent={Link} variant="text" color="inherit" to="/">Home</Button>
                                 </Stack>
+
+                                <Stack spacing={2} direction="row" sx={{ display: ["none", "none", "flex"] }}>
+                                    <Button startIcon={<HomeIcon/>} LinkComponent={Link} variant="text" color="inherit" to="/skillmap">Skill map</Button>
+                                </Stack>
+
+                                <Stack spacing={2} direction="row" sx={{ display: ["none", "none", "flex"] }}>
+                                    <Button startIcon={<HomeIcon/>} LinkComponent={Link} variant="text" color="inherit" to="/skillmapspecial">Skillmap special</Button>
+                                </Stack>
+
+                                <Stack spacing={2} direction="row" sx={{ display: ["none", "none", "flex"] }}>
+                                    <Button startIcon={<HomeIcon/>} LinkComponent={Link} variant="text" color="inherit" to="/map">Basic modules list</Button>
+                                </Stack>
+
+                                <Stack spacing={2} direction="row" sx={{ display: ["none", "none", "flex"] }}>
+                                    <Button startIcon={<HomeIcon/>} LinkComponent={Link} variant="text" color="inherit" to="/studentportal">Student portal</Button>
+                                </Stack>
+
+                                
                             </Box>
                             {!user && <Button LinkComponent={Link} variant="text" color="inherit" to="/login" startIcon={<LoginIcon/>}>Login</Button>}
                             {user && <NavbarProfile />}

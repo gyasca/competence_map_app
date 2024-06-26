@@ -5,6 +5,8 @@ import Home from './Home'
 import Login from './Login'
 import Map from './Map'
 import StudentPortal from './StudentPortal'
+import ViewSpecialSkillMap from './ViewSpecialSkillMap'
+import ViewSkillMap from './ViewSkillMap'
 // import Login from './Login'
 // import Register from './Register'
 // import Verify from './Verify'
@@ -38,6 +40,10 @@ function UserRoutes() {
             <Route path="/login" element={<Login />} />
             <Route path="/map" element={<Map />} />
             <Route path="/studentportal" element={<StudentPortal />} />
+            <Route path="/skillmapspecial" element={<ViewSpecialSkillMap />} />
+            <Route path="/skillmap" element={<ViewSkillMap />} />
+
+
             {/* <Route path="/register" element={<Register />} /> */}
             {/* <Route path="/login" element={!user ? <Login /> : <Navigate to={"/"} />} />
             <Route path="/register" element={!user ? <Register /> : <Navigate to={"/"} />} />
