@@ -104,7 +104,7 @@ const StudentPortal = () => {
               <IconButton>
                 <EmojiPeople fontSize="large" />
               </IconButton>
-              <Typography variant="subtitle1">Contract</Typography>
+              <Typography variant="subtitle1">Study</Typography>
             </Grid>
             <Grid item xs={4}>
               <IconButton>
